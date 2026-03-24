@@ -123,16 +123,6 @@
 
 ---
 
-## 📁 프로젝트 구조
-
-├── data/
-├── analysis/
-│   └── ml_pipeline_cleaned.ipynb
-├── report/
-│   └── 프로젝트보고서.pdf
-└── README.md
----
-
 # 보고서
 - 프로젝트 상세 내용은 PDF 보고서를 참고해 주세요
 - 최종 보고서 : [당뇨병 예측 모델링: 통계분석 및 머신러닝 접근](report/프로젝트보고서.pdf)
