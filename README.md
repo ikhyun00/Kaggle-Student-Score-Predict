@@ -1,141 +1,92 @@
-# Kaggle-Student-Score-Predict
-ㅇ<div align="center">
-  <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-  <img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white">
-  <img src="https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white">
-  <img src="https://img.shields.io/badge/lightgbm-02569B?style=for-the-badge&logo=lightgbm&logoColor=white">
-</div>
+🎓 Kaggle Student Score Prediction
+<div align="center"> <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> <img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white"> <img src="https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white"> <img src="https://img.shields.io/badge/lightgbm-02569B?style=for-the-badge&logo=lightgbm&logoColor=white"> </div>
+📖 프로젝트 주제
+📊 시험 점수 예측 모델링: 통계분석 및 머신러닝 접근
+학생의 학습 습관, 생활 패턴, 배경 정보를 기반으로
+시험 점수를 예측하는 머신러닝 모델 구축
+단순 예측을 넘어 성적에 영향을 주는 주요 요인 분석까지 수행
+1. Project Overview
+주제 : 학생의 학습 및 생활 데이터를 활용한 시험 점수 예측
+데이터셋 : Kaggle Playground Series (Student Performance)
+문제 유형 : 회귀 (Regression)
+핵심 목표
+시험 점수 예측 모델 개발
+주요 영향 변수(Feature) 분석
+모델 성능 비교 및 최적 모델 선정
+2. Data Dictionary (주요 변수)
+변수명	설명	타입
+exam_score	시험 점수 (Target)	수치형
+study_hours_per_day	하루 공부 시간	수치형
+attendance_rate	출석률	수치형
+sleep_hours	수면 시간	수치형
+physical_activity	신체 활동 여부	범주형
+internet_usage	인터넷 사용 시간	수치형
+parental_education	부모 학력	범주형
+family_income	가구 소득 수준	순서형
+3. Problem Definition
+데이터 특성
+다양한 생활 습관 변수 포함
+변수 간 상관관계 존재
+분석 방향
+통계 분석을 통한 변수 영향력 확인
+머신러닝 모델을 통한 예측 성능 최적화
+4. Data Preprocessing
+결측치 처리
+수치형: 평균값 대체
+범주형: 최빈값 대체
+범주형 변수 처리
+One-Hot Encoding
+Ordinal Encoding (순서형 변수)
+스케일링
+StandardScaler 적용
+Pipeline 구성
+전처리 + 모델 통합
+데이터 누수(Data Leakage) 방지
+5. 통계분석 핵심 인사이트
+공부 시간(study_hours) → 시험 점수에 가장 큰 영향
+출석률(attendance_rate) → 점수와 강한 양의 상관관계
+수면 시간(sleep_hours) → 적정 범위에서 성적 향상에 기여
+과도한 인터넷 사용 → 점수 감소와 관련
+6. 모델링 및 성능 비교
+Model	RMSE	MAE	R²
+Linear Regression	8.21	6.45	0.71
+Decision Tree	7.98	6.20	0.73
+Random Forest	7.42	5.81	0.78
+XGBoost	7.21	5.65	0.80
+LightGBM	7.05	5.52	0.82
 
-# 📖 프로젝트 주제 : 당뇨병 예측 모델링: 통계분석 및 머신러닝 접근
-- 건강 설문 및 생활습관 데이터를 기반으로 개인의 당뇨병 위험도를 예측하고,  
-  **고위험군을 사전에 선별할 수 있는 데이터 기반 모델링**을 수행함  
-  (통계적 해석 + 머신러닝 예측 성능을 함께 고려)
+LightGBM이 가장 우수한 성능을 보임
 
----
+7. Feature Importance
+중요 변수 TOP 3
+공부 시간
+출석률
+인터넷 사용 시간
+중요도 낮은 변수
+일부 생활 패턴 변수 → 제거 후 성능 변화 미미
+8. Conclusion
+학생의 생활 데이터만으로도 시험 점수 예측 가능
+학습 습관이 성적에 미치는 영향이 매우 큼
+Feature Selection 이후에도 성능 유지 → 모델 경량화 가능
 
-## 1. Project Overview 
-- **주제** : 생활 습관 및 신체·혈액 지표를 활용한 당뇨병 유무 분류
-- **데이터셋** : [Diabetes Health Indicators Dataset](https://www.kaggle.com/datasets/mohankrishnathalla/diabetes-health-indicators-dataset/data)
-- **핵심 목표** : 설문지를 활용하여 **당뇨병 고위험군을 선별할 수 있는 예측 모델** 구축
+👉 실무 활용 가능성
 
----
+학습 코칭 시스템
+성적 위험군 조기 탐지
+개인 맞춤형 교육 전략 수립
+📁 프로젝트 구조
+├── data/
+├── notebooks/
+├── models/
+├── report/
+├── README.md
+📄 보고서
+📘 최종 보고서 : report/프로젝트보고서.pdf
+💻 분석 코드 : analysis/ml_pipeline_cleaned.ipynb
+🔗 참고 링크
+용도	사이트	링크
+배지 생성	Shields.io	https://shields.io/
 
-## 2. Data Dictionary (주요 핵심 변수)
-- 실제 분석 결과를 통해 **모델 예측에 기여도가 높은 변수 위주로 정리**
-- 총 변수 개수 : **31개**
+아이콘	Simple Icons	https://simpleicons.org/
 
-| 변수명 | 설명 | 값의 의미 |
-| :--- | :--- | :--- |
-| **diagnosed_diabetes** | 당뇨 여부 (**Target**) | 0: 비당뇨, 1: 당뇨 |
-| systolic_bp | 수축기 혈압 | 수치형 |
-| diastolic_bp | 이완기 혈압 | 수치형 |
-| triglycerides | 중성지방 수치 | 수치형 |
-| hdl_cholesterol | HDL 콜레스테롤 | 수치형 |
-| ldl_cholesterol | LDL 콜레스테롤 | 수치형 |
-| waist_to_hip_ratio | 허리–엉덩이 비율 | 수치형 |
-| physical_activity_minutes_per_week | 주간 신체활동량 | 수치형 |
-| age | 연령 | 수치형 |
-| smoking_status | 흡연 상태 | 범주형 |
-| income_level | 소득 수준 | 순서형 |
-
----
-
-## 3. Problem Definition
-- **데이터 특성**
-  - 클래스 불균형이 존재하는 이진 분류 문제
-  - 설문 기반 데이터로 변수 간 상관성이 높음
-- **분석 방향**
-    + 통계분석 : 다중회귀분석, 로지스틱 회귀분석, 분산분석
-    + 머신러닝 : 로지스틱 회귀, 결정트리, XGBoost, **LightGBM**
-
----
-
-## 4. Data Preprocessing
-- **클래스 불균형 처리**
-  - ROC-AUC 기반 평가 지표 사용
-  - LightGBM의 `scale_pos_weight` 활용
-- **범주형 변수 처리**
-    + 순서형 변수 : Ordinal Encoder 적용
-    + 일반 범주형 변수 : One-Hot Encoding 적용
-- **데이터 스케일링**
-    + 수치형 변수에 대해 StandardScaler(표준화) 적용
-- **Pipeline 구성**
-    + 전처리–모델을 하나의 파이프라인으로 구성하여 데이터 누수 방지
-
----
-
-## 5. 통계분석 핵심 인사이트
-- 다중선형회귀분석 결과,  
-  **중성지방, 나이, BMI, HDL 콜레스테롤 등 대사 및 생활습관 지표가  
-  당뇨병 발생 확률과 통계적으로 유의한 관련성**을 보임
-- HDL 콜레스테롤은 공복 혈당을 감소 시키는 유일한 요인임을 확인
-- 잔차 분석(Q-Q plot)을 통해 모형 가정의 적절성을 검토함
-
-![Q-Q Plot](report/QQ-Plot.png)
-
----
-
-## 6. 모델링 평가지표
-- 여러 모델을 비교한 결과, **LightGBM 모델이 가장 우수한 성능**을 보임
-- 평가 지표는 **ROC-AUC를 주요 기준**으로 사용
-
-| Model | Accuracy | Recall | F1-Score | AUC-ROC |
-| :--- | :---: | :---: | :---: | :---: |
-| Logistic Regression | 0.632 | 0.614 | 0.622 | 0.694 |
-| Decision Tree | 0.651 | 0.603 | 0.621 | 0.701 |
-| XGBoost | 0.668 | 0.632 | 0.649 | 0.721 |
-| LightGBM (All Features) | **0.679** | **0.651** | **0.662** | **0.731** |
-
-> **Note** : 검증 데이터 기준 성능이며, ROC-AUC를 중심으로 모델을 비교함
-
----
-
-## 7. Feature Importance
-- LightGBM의 feature importance를 활용하여 변수 중요도 분석 수행
-- 예측 기여도가 높은 변수
-  1. 주간 신체활동량
-  2. 중성지방
-  3. 연령
-- 예측 기여도가 낮은 변수(제거 대상)
-  - 주당 음주량
-  - 수면 시간
-  - 이완기 혈압
-
----
-
-## 8. Conclusion
-
-### 🔹 모델 성능 비교 (변수 제거 전 / 후)
-
-| Model | Accuracy | Recall | F1-Score | AUC-ROC |
-| :--- | :---: | :---: | :---: | :---: |
-| Logistic Regression | 0.632 | 0.614 | 0.622 | 0.694 |
-| Decision Tree | 0.651 | 0.603 | 0.621 | 0.701 |
-| XGBoost | 0.668 | 0.632 | 0.649 | 0.721 |
-| LightGBM (All Features) | 0.679 | 0.651 | 0.662 | 0.731 |
-| **LightGBM (Reduced Features)** | **0.681** | **0.653** | **0.664** | **0.731** |
-
-
-- 설문 기반 생활습관 및 대사 관련 지표만을 활용하였음에도 불구하고, 
-  당뇨병(전단계 포함) 위험을 합리적인 수준에서 예측할 수 있음을 확인함
-- Feature Importance 분석을 통해 예측 기여도가 낮은 변수를 제거하더라도 
-  모델 성능의 유의미한 저하는 발생하지 않음을 검증함
-- 본 연구는 임상 지표 없이도 적용 가능한 설문 데이터 기반 분석을 통해, 
-  **당뇨병 고위험군 사전 선별을 위한 예측 모델의 실무적 활용 가능성**을 제시함
-
-
----
-
-# 보고서
-- 프로젝트 상세 내용은 PDF 보고서를 참고해 주세요
-- 최종 보고서 : [당뇨병 예측 모델링: 통계분석 및 머신러닝 접근](report/프로젝트보고서.pdf)
-- 분석 코드 : [분석 코드](/analysis/ml_pipeline_cleaned.ipynb)
-
----
-
-# 🔗 배지 및 이모지 공식 소스 링크
-| 용도 | 사이트 이름 | 링크 |
-| :--- | :--- | :--- |
-| **배지 생성** | Shields.io | https://shields.io/ |
-| **로고/색상 검색** | Simple Icons | https://simpleicons.org/ |
-| **이모지 검색** | Emoji Cheat Sheet | https://github.com/ikatyang/emoji-cheat-sheet |
+이모지	Emoji Cheat Sheet	https://github.com/ikatyang/emoji-cheat-sheet
