@@ -5,6 +5,7 @@
   <img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white">
   <img src="https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white">
   <img src="https://img.shields.io/badge/lightgbm-02569B?style=for-the-badge&logo=lightgbm&logoColor=white">
+  <img src="https://img.shields.io/badge/XGBoost-EA4335?style=for-the-badge&logo=apache&logoColor=white">
 </div>
 
 ---
